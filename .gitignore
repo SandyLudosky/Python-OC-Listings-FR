@@ -1,0 +1,10 @@
+**/__pycache__
+*.pyc
+env
+.env
+oc-lettings-site.sqlite3-journal
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
