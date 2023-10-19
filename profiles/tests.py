@@ -19,7 +19,7 @@ class TestProfiles(TestCase):
         self.assertEqual(True, b"<title>Profiles</title>" in response.content)
 
     def test_profiles(self):
-        """page should contain <title>lettings title value</title>"""
+        """page should contain <title>lettings title value</title> """
         Profiles_tests = Profile.objects.all()
         for profile in Profiles_tests:
             response = self.client.get(reverse("profiles:profile", args=[profile.user]))
