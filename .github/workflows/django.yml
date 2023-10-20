@@ -25,6 +25,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    # Installer Sentry et dotenv
+    - name: Install Sentry and dotenv
+      run: |
+        pip install sentry-sdk python-dotenv
+    env:
+      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+    - name: Debug environment variables
+  run: env | sort
     - name: Run Tests
       run: |
         python manage.py test
