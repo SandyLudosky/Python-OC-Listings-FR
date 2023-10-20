@@ -121,7 +121,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-SENTRY_DNS = os.environ["SENTRY_DNS"]
+SENTRY_DNS = os.getenv("SENTRY_DNS")
 
 sentry_sdk.init(
     dsn=SENTRY_DNS,
