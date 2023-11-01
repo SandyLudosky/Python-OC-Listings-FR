@@ -61,6 +61,18 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 - `cd /path/to/oc_lettings_site/profiles`
 - `pytest`
 
+#### image docker
+
+`export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"`
+
+`docker run -p 8000:8000 listings`
+
+#### push sur docker
+
+`docker push / docker pull sandra975/listings`
+
+
+
 #### Tests Coverage
 ![coverage](img/coverage.png)
 
