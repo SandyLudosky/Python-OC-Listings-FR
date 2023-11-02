@@ -28,7 +28,6 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
-
   render-deploy:
     runs-on: ubuntu-latest
     steps:
