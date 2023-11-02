@@ -45,7 +45,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: sandra975/listings:latest
+        tags: listings:latest
 
   docker-deploy:
     needs: docker-build
