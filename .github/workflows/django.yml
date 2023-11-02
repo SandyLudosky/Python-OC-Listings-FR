@@ -47,10 +47,8 @@ jobs:
         push: true
         tags: sandra975/listings:latest
 
-  docker-deploy:
-    needs: docker-build
+  render-deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Deploy to production
       uses: johnbeynon/render-deploy-action@v0.0.8
