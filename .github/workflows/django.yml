@@ -33,19 +33,53 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Login to DockerHub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        tags: listings:latest
+    # - name: Checkout code
+    #   uses: actions/checkout@v3
+    # - name: Login to DockerHub
+    #   uses: docker/login-action@v1
+    #   with:
+    #     username: ${{ secrets.DOCKER_USERNAME }}
+    #     password: ${{ secrets.DOCKER_PASSWORD }}
+    # - name: Build and push Docker image
+    #   uses: docker/build-push-action@v2
+    #   with:
+    #     context: .
+    #     push: true
+    #     tags: listings:latest
+
+      # - name: docker login
+      #   run: | # log into docker hub account
+      #       docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}} docker.io
+      # - name: Pull Images
+      #   run: |
+      #       docker pull ${{secrets.DOCKER_USERNAME}}/listings:latest || true
+      # - name: Build images
+      #   run: docker build -t listings . --file ./Dockerfile
+      # - name: tags
+      #   run: docker tag listings:latest ${{secrets.DOCKER_USERNAME}}/listings
+
+      # - name: Push images
+      #   run: docker push ${{secrets.DOCKER_USERNAME}}/listings
+
+      # - name: Build & push Docker image
+      #   uses: mr-smithers-excellent/docker-build-push@v5
+      #   with:
+      #     # directory: /microservices/AuthService
+      #     image: ${{ secrets.DOCKER_USERNAME }}/listings
+      #     tags: latest
+      #     registry: docker.io
+      #     dockerfile: Dockerfile
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Permission
+        run: chmod +r Dockerfile
+
+      - name: Ls -la
+        run: ls -la
+
+      - name: Debug
+        run: cat Dockerfile
 
   render-deploy:
     needs: docker-build
