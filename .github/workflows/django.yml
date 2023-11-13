@@ -1,4 +1,4 @@
-name: Django CI
+name: Django CI/CD
 
 on:
   push:
@@ -47,7 +47,7 @@ jobs:
         push: true
         tags: listings:latest
 
-  docker-deploy:
+  render-deploy:
     runs-on: ubuntu-latest
     steps:
 
