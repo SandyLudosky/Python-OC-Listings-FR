@@ -48,6 +48,7 @@ jobs:
         tags: listings:latest
 
   render-deploy:
+    needs: docker-build
     runs-on: ubuntu-latest
     steps:
 
