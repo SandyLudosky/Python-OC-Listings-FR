@@ -74,7 +74,9 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 
 #### Tests Coverage
-![coverage](img/coverage.png)
-
 `coverage run manage.py test coverage report`
 `coverage html`
+
+resultat :
+![coverage](img/coverage.png)
+
