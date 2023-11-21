@@ -1,4 +1,4 @@
-""" Test case Lettings app """
+""" Test case Profiles app """
 
 import pytest
 from django.test import TestCase
@@ -27,9 +27,9 @@ class TestProfiles(TestCase):
             print(profile.user)
             self.assertInHTML(str(profile.user), str(response.content))
 
-
     def test_profile_details(self):
         """page should contain <title>lettings title value</title>"""
         response = self.client.get(reverse("profiles:profile", args=["4meRomance"]))
         assert response.status_code == 200
         self.assertInHTML("4meRomance", str(response.content))
+

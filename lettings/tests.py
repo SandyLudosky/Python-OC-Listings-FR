@@ -1,5 +1,5 @@
 """ Test case Lettings app """
-
+import pytest
 from django.test import TestCase
 from django.urls import reverse
 
@@ -10,16 +10,9 @@ from lettings.models import Letting
 # Create tests for the custom 404 and 500 views here.
 
 
-class LettingsTestClass(TestCase):
+@pytest.mark.django_db
+class TestLettings(TestCase):
     """Test Lettings URL"""
-
-    def setUp(self):
-        # Setup run before every test method.
-        pass
-
-    def tearDown(self):
-        # Clean up run after every test method.
-        pass
 
     def test_index(self):
         """page should contain <title>Lettings</title>"""
@@ -29,7 +22,7 @@ class LettingsTestClass(TestCase):
 
     def test_404(self):
         """page should contain <title>404 Page Not Found</title>"""
-        response = self.client.get(reverse("dfdnk"))
+        response = self.client.get("dfdnk")
         assert response.status_code == 404
         self.assertEqual(True, b"<title>404 Page Not Found</title>" in response.content)
 
