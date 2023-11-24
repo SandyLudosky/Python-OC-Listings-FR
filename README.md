@@ -81,3 +81,8 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 resultat :
 ![coverage](img/coverage.png)
 
+
+#### Documentation
+
+`cd dos`
+`make html`

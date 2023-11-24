@@ -400,7 +400,7 @@ table.field-list p {
 }
 
 /* Cloned from
- * https://github.com/sphinx-doc/sphinx/commit/ef60dbfce09286b20b7385333d63a60321784e68
+ * https://github.com/sphinx-docs/sphinx/commit/ef60dbfce09286b20b7385333d63a60321784e68
  */
 .field-name {
     -moz-hyphens: manual;
