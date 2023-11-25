@@ -75,7 +75,6 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 `docker push / docker pull sandra975/listings`
 
 
-
 #### Tests Coverage
 `coverage run manage.py test`
 `coverage report`
