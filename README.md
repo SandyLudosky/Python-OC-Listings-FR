@@ -86,5 +86,5 @@ resultat :
 
 #### Documentation
 
-`cd dos`
+`cd docs`
 `make html`
